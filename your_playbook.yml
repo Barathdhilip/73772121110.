@@ -1,0 +1,21 @@
+---
+- name: Setup Environment
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Create a file named register_number.txt
+      file: 73772121110
+        path: "/tmp/register_number.txt"
+        state: touch
+
+    - name: Create a file named register_number
+      file: 73772121110
+        path: "/tmp/register_number"
+        state: touch
+
+    - name: Install the tree package
+      apt:
+        name: tree
+        state: present
+        update_cache: yes
+
